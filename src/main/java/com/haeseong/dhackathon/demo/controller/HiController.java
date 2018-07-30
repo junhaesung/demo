@@ -35,6 +35,6 @@ public class HiController {
     // 주사위 던지기
     @PostMapping("/dice")
     public String dice() {
-        return String.valueOf(new Random().nextInt(6) + 1);
+        return String.valueOf(new Random().nextInt(6) + 1) + "이 나왔습니다.";
     }
 }
