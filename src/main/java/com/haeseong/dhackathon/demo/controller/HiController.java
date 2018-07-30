@@ -35,7 +35,15 @@ public class HiController {
     // 주사위 던지기
     @PostMapping("/dice")
     public String dice() {
-        int randomNumber = new Random().nextInt(6) + 1;
-        return String.format("{\"responseType\":\"inChannel\",\"text\":\"%d\"}", randomNumber);
+        return String.format("{\"responseType\":\"inChannel\",\"text\":\"%d\"}", getRandomDiceNumber());
+    }
+
+    @PostMapping("/dice/slack")
+    public int diceToSlack() {
+        return getRandomDiceNumber();
+    }
+
+    private int getRandomDiceNumber() {
+        return new Random().nextInt(6) + 1;
     }
 }
