@@ -3,6 +3,8 @@ package com.haeseong.dhackathon.demo.controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 @RestController
 public class HiController {
 
@@ -28,5 +30,11 @@ public class HiController {
     @PostMapping("/hi4")
     public String getHi4() {
         return "{\"responseType\":\"inChannel\",\"deleteOriginal\":true,\"text\":\"HelloWorld!(Updated)\"}";
+    }
+
+    // 주사위 던지기
+    @PostMapping("/dice")
+    public String dice() {
+        return String.valueOf(new Random().nextInt(6) + 1);
     }
 }
