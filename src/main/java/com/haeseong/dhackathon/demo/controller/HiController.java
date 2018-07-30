@@ -40,7 +40,7 @@ public class HiController {
 
     @PostMapping("/dice/slack")
     public String diceToSlack() {
-        return String.format("{\"text\":\"%d\"", getRandomDiceNumber());
+        return String.format("{\"text\":\"%d\"}", getRandomDiceNumber());
     }
 
     private int getRandomDiceNumber() {
