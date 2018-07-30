@@ -36,6 +36,6 @@ public class HiController {
     @PostMapping("/dice")
     public String dice() {
         int randomNumber = new Random().nextInt(6) + 1;
-        return String.format("{\"responseType\":\"inChannel\",\"text\":\"%d!\"}", randomNumber);
+        return String.format("{\"responseType\":\"inChannel\",\"text\":\"%d\"}", randomNumber);
     }
 }
